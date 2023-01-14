@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
     fun getArrayList(key: String): ArrayList<String> {
         val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         val gson = Gson()
-        val json: String? = prefs.getString(key,"")
+        val json: String? = prefs.getString(key,"[]")
         val type: Type = object : TypeToken<ArrayList<String?>?>() {}.getType()
         return gson.fromJson(json, type)
     }
